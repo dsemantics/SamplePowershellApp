@@ -95,26 +95,26 @@ namespace SamplePowershellApp
                         DatasetResult.Text = Server.HtmlEncode(builder1.ToString());
                     }
 
-                    var builder2 = new StringBuilder();
-                    var shell3 = PowerShell.Create(iss);
-                    shell3.Commands.AddCommand("Invoke-PowerBIRestMethod");
-                    shell3.Commands.AddParameter("Url", "groups");
-                    shell3.Commands.AddParameter("Method", "Get");
-                    var resestMethod = shell3.Invoke();
-                    if (resestMethod.Count > 0)
-                    {
-                        foreach (var psObject in resestMethod)
-                        {
-                            // Convert the Base Object to a string and append it to the string builder.
-                            // Add \r\n for line breaks
-                            var reportName = psObject.Properties["Name"].Value;
+                    //var builder2 = new StringBuilder();
+                    //var shell3 = PowerShell.Create(iss);
+                    //shell3.Commands.AddCommand("Invoke-PowerBIRestMethod");
+                    //shell3.Commands.AddParameter("Url", "groups");
+                    //shell3.Commands.AddParameter("Method", "Get");
+                    //var resestMethod = shell3.Invoke();
+                    //if (resestMethod.Count > 0)
+                    //{
+                    //    foreach (var psObject in resestMethod)
+                    //    {
+                    //        // Convert the Base Object to a string and append it to the string builder.
+                    //        // Add \r\n for line breaks
+                    //        var reportName = psObject.Properties["Name"].Value;
 
 
-                            builder2.Append(psObject.Properties["Name"].Value + "\r\n");
+                    //        builder2.Append(psObject.Properties["Name"].Value + "\r\n");
 
-                        }
-                        DatasetResult.Text = Server.HtmlEncode(builder2.ToString());
-                    }
+                    //    }
+                    //    DatasetResult.Text = Server.HtmlEncode(builder2.ToString());
+                    //}
 
 
                 }
